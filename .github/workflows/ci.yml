@@ -1,0 +1,29 @@
+name: CI
+on: [push, pull_request]
+
+jobs:
+  linux:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get Sources
+        uses: actions/checkout@v1
+      
+      - name: Shellcheck
+        uses: docker://koalaman/shellcheck-alpine
+        with:
+          entrypoint: /bin/ash
+          args: -c "find . -type f -name '*.sh' | xargs shellcheck"
+  
+  windows:
+    runs-on: windows-latest
+    steps:
+      - name: Get Sources
+        uses: actions/checkout@v1
+
+      - name: Install PSScriptAnalyzer
+        shell: pwsh
+        run: Install-Module PSScriptAnalyzer -Force
+      
+      - name: PSScriptAnalyzer
+        shell: pwsh
+        run: Invoke-ScriptAnalyzer -Path . -EnableExit
