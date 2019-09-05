@@ -9,12 +9,9 @@ if (-not (Get-Command choco -ErrorAction SilentlyContinue)) {
 }
 
 Write-Output "Chocolatey is Installed"
-
-Write-Output "Installing or Updating Git"
 if (-not (Get-Command git -ErrorAction SilentlyContinue)) {
+    Write-Output "Installing git"
     choco install --yes git
-} else {
-    choco upgrade --yes git
 }
 refreshenv
 

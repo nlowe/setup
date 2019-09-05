@@ -3,4 +3,8 @@
 
 Write-Output "Using Setup Scripts in $PSScriptRoot"
 
-Write-Output "TODO: Setup All The things"
+& "$PSScriptRoot/customization.ps1"
+& "$PSScriptRoot/packages.ps1"
+
+Write-Output "=== System Customization Complete"
+Write-Output "=== Please Reboot to apply all changes"

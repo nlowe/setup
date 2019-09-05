@@ -26,4 +26,4 @@ jobs:
       
       - name: PSScriptAnalyzer
         shell: pwsh
-        run: Invoke-ScriptAnalyzer -Path . -EnableExit
+        run: Invoke-ScriptAnalyzer -Path . -ExcludeRule PSAvoidUsingInvokeExpression -EnableExit
