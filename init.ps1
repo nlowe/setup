@@ -12,8 +12,9 @@ Write-Output "Chocolatey is Installed"
 if (-not (Get-Command git -ErrorAction SilentlyContinue)) {
     Write-Output "Installing git"
     choco install --yes git
+    $env:PATH = "$env:PATH;$env:ProgramFiles\Git\cmd"
+    [System.Environment]::SetEnvironmentVariable("PATH", $env:PATH, [System.EnvironmentVariableTarget]::Machine)
 }
-refreshenv
 
 Write-Output "Downloading Setup Scripts"
 New-Item -ItemType Directory -Path $env:USERPROFILE -Name projects -ErrorAction SilentlyContinue | Out-Null
