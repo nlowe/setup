@@ -1,0 +1,10 @@
+{
+    ".gitconfig": {
+        "destination": "~/.gitconfig",
+        "symlink": false
+    },
+    ".editorconfig": {
+        "destination": "~/.editorconfig",
+        "symlink": true
+    }
+}

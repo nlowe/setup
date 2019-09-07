@@ -1,0 +1,19 @@
+[user]
+    name = Nathan Lowe
+    email = public@nlowe.me
+    signingkey = 1091439964459621
+
+[core]
+    autocrlf = false
+
+[alias]
+    lg1 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+    lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+    lg = !"git lg1"
+    amend = commit --amend --no-edit
+
+[commit]
+    gpgsign = true
+
+[gpg]
+    program = C:\\Program Files (x86)\\GnuPG\\bin\\gpg.exe
