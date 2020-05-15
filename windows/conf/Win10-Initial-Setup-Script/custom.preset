@@ -9,7 +9,8 @@
 RequireAdmin
 
 ### Privacy Tweaks ###
-DisableTelemetry                # EnableTelemetry
+# Telemetry must be enabled to join the insiders program. We block telemetry instead via the hosts file.
+EnableTelemetry # DisableTelemetry                # EnableTelemetry
 DisableWiFiSense                # EnableWiFiSense
 # DisableSmartScreen            # EnableSmartScreen
 DisableWebSearch                # EnableWebSearch
