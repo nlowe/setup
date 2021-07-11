@@ -1,6 +1,6 @@
 [submodule "windows/tools/Win10-Initial-Setup-Script"]
 	path = windows/tools/Win10-Initial-Setup-Script
 	url = https://github.com/Disassembler0/Win10-Initial-Setup-Script.git
-[submodule ".\\windows\\tools\\w10-hosts-blacklist"]
-	path = .\\windows\\tools\\w10-hosts-blacklist
+[submodule "windows/tools/w10-hosts-blacklist"]
+	path = windows/tools/w10-hosts-blacklist
 	url = https://github.com/Forsaked/hosts.git
