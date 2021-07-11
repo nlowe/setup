@@ -4,16 +4,25 @@
 $packages = @(
     # System Utilities
     "7zip",
+    "autohotkey.portable",
+    "bind-toolsonly",
+    "gsudo",
     "microsoft-windows-terminal",
+    "nano",
+    "rsat",
     "sysinternals",
     "windirstat",
 
+    # Android
+    "adb",
+    
     # Media
     "audacity",
     "audacity-ffmpeg",
     "ffmpeg",
     "dopamine",
     "obs-studio",
+    "transmission",
     "vlc",
     "youtube-dl",
 
@@ -24,6 +33,7 @@ $packages = @(
     "veracrypt",
 
     # Development
+    "diffutils",
     "docker-compose",
     "docker-desktop",
     "dotnetcore-runtime",
@@ -32,20 +42,27 @@ $packages = @(
     "git",
     "golang",
     "gpg4win",
+    "graphviz",
     "hackfont",
+    "hxd",
     "jetbrainstoolbox",
+    "jq",
     "kubernetes-cli",
+    "make",
     "meld",
     "notepadplusplus",
     "nuget.commandline",
+    "pkgconfiglite",
     "python2",
     "python3",
     "shellcheck",
     "vscode",
     "visualstudio-installer",
+    "yq",
 
     # Gaming
     "logitechgaming",
+    "ksp-ckan",
     "steam",
 
     # Misc Apps
@@ -62,3 +79,8 @@ if (-not (Get-Command choco -ErrorAction SilentlyContinue)) {
 
 Write-Output "Installing Packages"
 Start-Process -FilePath "choco" -ArgumentList $args -Wait -NoNewWindow
+
+Write-output "Bootstrapping gpg agent"
+refreshenv
+
+gpgconf --launch gpg-agent
